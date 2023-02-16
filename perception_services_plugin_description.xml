@@ -1,0 +1,5 @@
+<library path="perception_services">
+  <class type="perception_services::PerceptionServicesBehaviorsLoader"
+         base_class_type="moveit_studio::behaviors::SharedResourcesNodeLoaderBase">
+  </class>
+</library>
