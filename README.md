@@ -31,3 +31,10 @@ Add this to your TreeNodesModel:
       <input_port name="input_image" default="{blackboard_image}">The blackboard port where the image can be found.</input_port>
       <output_port name="output_file" default="/opt/moveit_studio/user_ws/image_file.jpg">The full path and filename to save the image.</output_port>
     </Action>
+
+
+Add this to your site_config.yaml:
+
+  behavior_loader_plugins:
+    perception_services:
+      - "perception_services::PerceptionServicesBehaviorsLoader"  # Your new custom Behavior loader plugin
