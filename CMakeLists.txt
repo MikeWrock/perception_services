@@ -26,7 +26,6 @@ add_library(
   perception_services SHARED
   #src/perception_services.cpp
   src/image_to_blackboard.cpp
-  src/image_to_file.cpp
   src/blackboard_image_to_file.cpp
   src/register_behaviors.cpp
 )

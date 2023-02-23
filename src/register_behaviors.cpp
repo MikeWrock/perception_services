@@ -3,7 +3,6 @@
 #include <moveit_studio_behavior_interface/shared_resources_node_loader.hpp>
 
 #include <perception_services/image_to_blackboard.hpp>
-#include <perception_services/image_to_file.hpp>
 #include <perception_services/blackboard_image_to_file.hpp>
 
 #include <pluginlib/class_list_macros.hpp>
@@ -18,7 +17,6 @@ public:
   {
     // moveit_studio::behaviors::registerBehavior<PerceptionServices>(factory, "PerceptionServices", shared_resources);
     moveit_studio::behaviors::registerBehavior<image_to_blackboard::ImageToBlackboard>(factory, "ImageToBlackboard", shared_resources);
-    moveit_studio::behaviors::registerBehavior<image_to_file::ImageToFile>(factory, "ImageToFile", shared_resources);
     moveit_studio::behaviors::registerBehavior<blackboard_image_to_file::BlackboardImageToFile>(factory, "BlackboardImageToFile", shared_resources);
     
   }

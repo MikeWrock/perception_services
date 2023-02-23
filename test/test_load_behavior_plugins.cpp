@@ -28,7 +28,7 @@ TEST(RobotTask, load_behavior_plugins)
                               BT::NodeConfiguration());
 
 
-  factory.instantiateTreeNode("test_behavior_name", "ImageToFile",
+  factory.instantiateTreeNode("test_behavior_name", "BlackboardImageToFile",
                               BT::NodeConfiguration());
 }
 
