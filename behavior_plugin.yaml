@@ -1,0 +1,4 @@
+objectives:
+  behavior_loader_plugins:
+    perception_services:
+      - "perception_services::PerceptionServicesBehaviorsLoader"  # Your new custom Behavior loader plugin
