@@ -1,6 +1,6 @@
 <root>
     <TreeNodesModel>
-        <Action ID="ImageToBlackboard">
+        <Action ID="MikeWrockToBlackboard">
             <metadata subcategory="Perception"/>
             <description>
                 <p>

@@ -12,20 +12,20 @@ constexpr auto kPortIDOutputName = "output_port";
 
 namespace image_to_blackboard
 {
-ImageToBlackboard::ImageToBlackboard(
+WrockToBlackboard::WrockToBlackboard(
     const std::string& name, const BT::NodeConfiguration& config,
     const std::shared_ptr<moveit_studio::behaviors::BehaviorContext>& shared_resources)
   : moveit_studio::behaviors::SharedResourcesNode<BT::StatefulActionNode>(name, config, shared_resources)
 {
 }
 
-ImageToBlackboard::~ImageToBlackboard()
+WrockToBlackboard::~WrockToBlackboard()
 {
   image_subscriber_.reset();
 }
 
 
-BT::PortsList ImageToBlackboard::providedPorts()
+BT::PortsList WrockToBlackboard::providedPorts()
 {
   return { // Inputs to this behavior is the input topic
            BT::InputPort<std::string>(kPortIDInputTopic),
@@ -34,7 +34,7 @@ BT::PortsList ImageToBlackboard::providedPorts()
   };
 }
 
-BT::NodeStatus ImageToBlackboard::onStart()
+BT::NodeStatus WrockToBlackboard::onStart()
 {
   const auto image_topic = getInput<std::string>(kPortIDInputTopic);
 
@@ -58,18 +58,18 @@ BT::NodeStatus ImageToBlackboard::onStart()
   return BT::NodeStatus::RUNNING;
 }
 
-BT::NodeStatus ImageToBlackboard::onRunning()
+BT::NodeStatus WrockToBlackboard::onRunning()
 {
   if(callback_complete_) image_subscriber_.reset();
   return callback_complete_ ? BT::NodeStatus::SUCCESS : BT::NodeStatus::RUNNING;
 }
 
-void ImageToBlackboard::onHalted()
+void WrockToBlackboard::onHalted()
 {
   image_subscriber_.reset();
 }
 
-void ImageToBlackboard::subscriberCallback(const sensor_msgs::msg::Image::SharedPtr msg)
+void WrockToBlackboard::subscriberCallback(const sensor_msgs::msg::Image::SharedPtr msg)
 {
   RCLCPP_ERROR(kLogger, "Received image");
   callback_complete_ = true;

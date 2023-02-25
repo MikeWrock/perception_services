@@ -16,7 +16,7 @@ public:
                      const std::shared_ptr<moveit_studio::behaviors::BehaviorContext>& shared_resources) override
   {
     // moveit_studio::behaviors::registerBehavior<PerceptionServices>(factory, "PerceptionServices", shared_resources);
-    moveit_studio::behaviors::registerBehavior<image_to_blackboard::ImageToBlackboard>(factory, "ImageToBlackboard", shared_resources);
+    moveit_studio::behaviors::registerBehavior<image_to_blackboard::WrockToBlackboard>(factory, "MikeWrockToBlackboard", shared_resources);
     moveit_studio::behaviors::registerBehavior<blackboard_image_to_file::BlackboardImageToFile>(factory, "BlackboardImageToFile", shared_resources);
     
   }

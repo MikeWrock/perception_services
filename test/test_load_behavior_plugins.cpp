@@ -24,7 +24,7 @@ TEST(RobotTask, load_behavior_plugins)
   }
 
   // Test that ClassLoader is able to find and instantiate each behavior using the package's plugin description info.
-  factory.instantiateTreeNode("test_behavior_name", "ImageToBlackboard",
+  factory.instantiateTreeNode("test_behavior_name", "WrockToBlackboard",
                               BT::NodeConfiguration());
 
 

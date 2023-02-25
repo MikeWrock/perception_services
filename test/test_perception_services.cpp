@@ -12,7 +12,7 @@
 /**
  * @brief 
  */
-TEST(SaveImageToBlackboard, test_perception_services)
+TEST(SaveWrockToBlackboard, test_perception_services)
 {
 
   pluginlib::ClassLoader<moveit_studio::behaviors::SharedResourcesNodeLoaderBase> class_loader(
@@ -43,7 +43,7 @@ TEST(SaveImageToBlackboard, test_perception_services)
     auto plugin_instance = class_loader.createUniqueInstance("perception_services::PerceptionServicesBehaviorsLoader");
     ASSERT_NO_THROW(plugin_instance->registerBehaviors(factory, shared_resources));
   }
-  auto image_to_blackboard_behavior = factory.instantiateTreeNode("test_behavior_name", "ImageToBlackboard", config);
+  auto image_to_blackboard_behavior = factory.instantiateTreeNode("test_behavior_name", "WrockToBlackboard", config);
 
   // WHEN the behavior is ticked for the first time
   // THEN it returns RUNNING because it has started listening
