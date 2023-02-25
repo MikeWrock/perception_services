@@ -75,8 +75,8 @@ TEST(SaveImageToBlackboard, test_perception_services)
     FAIL() << "Failed to retrieve image message from blackboard: " << e.what();
   }
 
-  EXPECT_EQ(image_msg.width, 640);
-  EXPECT_EQ(image_msg.height, 480);
+  EXPECT_EQ(image_msg.width, static_cast<unsigned int>(640));
+  EXPECT_EQ(image_msg.height, static_cast<unsigned int>(480));
 
 }
 
